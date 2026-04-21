@@ -1,0 +1,55 @@
+{
+  "name": "fnaf-jumpscares",
+  "displayName": "FNAF Jumpscares",
+  "description": "Customizable Fnaf Jumpscares.",
+  "version": "1.0.0",
+  "publisher": "emilia-gomes2008",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "icon": "media/icon.png",
+  "activationEvents": ["onStartupFinished"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fnaf.triggerJumpscare",
+        "title": "FNAF: Trigger Jumpscare Agora"
+      },
+      {
+        "command": "fnaf.openSettings",
+        "title": "FNAF: Configurar Jumpscares"
+      }
+    ],
+    "configuration": {
+      "title": "FNAF Jumpscares",
+      "properties": {
+        "fnaf.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ativar/desativar jumpscares"
+        },
+        "fnaf.chance": {
+          "type": "number",
+          "default": 5,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Probabilidade de jumpscare por minuto (%)"
+        },
+        "fnaf.soundEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ativar sons dos jumpscares"
+        },
+        "fnaf.intervalSeconds": {
+          "type": "number",
+          "default": 30,
+          "minimum": 5,
+          "maximum": 600,
+          "description": "Intervalo em segundos entre verificações de jumpscare"
+        }
+      }
+    }
+  }
+}
